@@ -8,6 +8,7 @@
     "cors": "^2.8.4",
     "express": "^4.15.5",
     "npm": "^5.4.2",
+    "request": "^2.82.0",
     "util": "^0.10.3"
   },
   "devDependencies": {},
