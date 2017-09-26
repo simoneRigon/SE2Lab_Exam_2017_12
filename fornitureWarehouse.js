@@ -213,15 +213,26 @@ var insertRawElement = function insertRawElement(ID, quantity){
 }
 
 // inserisco funzione updateFornitures
+
+var indexFornitures = 5;
+
 var updateFornitures = function updateFornitures(fornitureID, forniturePrice, fornitureQuantity, fornitureElements){
+    var res = null;
+    
     var indexForniture = searchPosForniture(fornitureID);
     
     if(indexForniture == null){
         // creo nuovo forniture
+        
     }else{
         // aggiorno forniture esistente
         fornitures[indexForniture].price = forniturePrice;
         fornitures[indexForniture].quantity = fornitureQuantity;
+        for(var i=0; i<fornitureElements.length; i++){
+            fornitures[indexForniture].elements[i].quantity = fornitureElements[i].quantity;
+        }
+        
+        res = getFornitures;
     }
     
 }
@@ -235,3 +246,4 @@ exports.searchPosForniture = searchPosForniture;
 exports.searchPosRawElement = searchPosRawElement; 
 exports.sellForniture = sellForniture;
 exports.inserRawElement = insertRawElement;
+exports.updateFornitures = updateFornitures;

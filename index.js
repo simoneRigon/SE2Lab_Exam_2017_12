@@ -203,19 +203,84 @@ app.use('/insertRawElements', function(request, response){
     
     if(id_element == 'none' || elem_quantity == 'none'){
         response.writeHead(406, headers);
-        response.end("raw element not found");
+        response.end(JSON.stringify(id_element));
+        
     }else{
         var resInsertQuantity = fornitureWarehouse.inserRawElement(id_element, elem_quantity);
         
         if(resInsertQuantity == null){
             response.writeHead(404, headers);
-            response.end(JSON.stringify(id_element));
+            response.end("raw element not found");
         }else{
             response.writeHead(200, headers);
             response.end(JSON.stringify(resInsertQuantity));
         }
         
     }
+    
+});
+
+// Inserisco funzione "updateForniture"
+app.use('/updateFornitures', function(request, response){
+    var headers = {};
+	headers["Access-Control-Allow-Origin"] = "*";
+	headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+	headers["Access-Control-Allow-Credentials"] = false;
+	headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+	headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+	headers["Content-Type"] = "application/json";
+    
+    var id;
+    var price;
+    var quantity;
+    var element;
+    
+    if(typeof request.body !== 'undefined' && request.body){
+        
+        if(typeof request.body.fornitureID !== 'undefined' && request.body.fornitureID){
+            id = request.body.fornitureID;
+        }else{
+            id = 'none';
+        }
+        
+        if(typeof request.body.forniturePrice !== 'undefined' && request.body.forniturePrice){
+            price = request.body.forniturePrice;
+        }else{
+            price = 'none';
+        }
+        
+        if(typeof request.body.fornitureQuantity !== 'undefined' && request.body.fornitureQuantity){
+            quantity = request.body.fornitureQuantity;
+        }else{
+            quantity = 'none';
+        }
+        
+        if(typeof request.body.fornitureElements !== 'undefined' && request.body.fornitureElements){
+            element = request.body.fornitureElements;
+        }else{
+            element = 'none';
+        }
+        
+        
+        if(id == 'none' || price == 'none' || quantity == 'none' || element == 'none'){
+            response.writeHead(406, headers);
+            response.end(JSON.stringify(id));
+        }else{
+            var updateForniture = fornitureWarehouse.updateFornitures(id, price, quantity, element);
+
+            if(updateForniture == null){
+                response.writeHead(400, headers);
+                response.end("Errore");
+            }else{
+                response.writeHead(200, headers);
+                response.end(JSON.stringify(updateForniture));
+            }
+        
+        }
+        
+        
+    }
+    
     
 });
 
