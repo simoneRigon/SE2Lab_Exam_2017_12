@@ -200,6 +200,18 @@ var sellForniture = function sellForniture(fornitureID)
         return null;
 }
 
+// inserisco funzione insertRawElement
+var insertRawElement = function insertRawElement(ID, quantity){
+    var res = null;
+    var index = searchPosRawElement(ID);
+    if(index != null){
+        rawElements[index].quantity = quantity;
+        res = rawElements[index];
+    }
+    
+    return res;
+}
+
 
 //export functions
 exports.getFornitures = getFornitures; 
@@ -207,4 +219,5 @@ exports.getRawElements = getRawElements;
 exports.searchForniture = searchForniture; 
 exports.searchPosForniture = searchPosForniture; 
 exports.searchPosRawElement = searchPosRawElement; 
-exports.sellForniture = sellForniture; 
+exports.sellForniture = sellForniture;
+exports.inserRawElement = inserRawElement;
