@@ -209,7 +209,7 @@ app.use('/insertRawElement', function(request, response){
         
         if(resInsertQuantity == null){
             response.writeHead(404, headers);
-            response.end(JSON.stringify(id_element);
+            response.end(JSON.stringify(id_element));
         }else{
             response.writeHead(200, headers);
             response.end(JSON.stringify(resInsertQuantity));

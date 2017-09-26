@@ -212,6 +212,20 @@ var insertRawElement = function insertRawElement(ID, quantity){
     return res;
 }
 
+// inserisco funzione updateFornitures
+var updateFornitures = function updateFornitures(fornitureID, forniturePrice, fornitureQuantity, fornitureElements){
+    var indexForniture = searchPosForniture(fornitureID);
+    
+    if(indexForniture == null){
+        // creo nuovo forniture
+    }else{
+        // aggiorno forniture esistente
+        fornitures[indexForniture].price = forniturePrice;
+        fornitures[indexForniture].quantity = fornitureQuantity;
+    }
+    
+}
+
 
 //export functions
 exports.getFornitures = getFornitures; 
