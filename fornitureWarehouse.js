@@ -232,7 +232,7 @@ var updateFornitures = function updateFornitures(fornitureID, forniturePrice, fo
             fornitures[indexForniture].elements[i].quantity = fornitureElements[i].quantity;
         }
         
-        res = getFornitures;
+        res = fornitures[indexForniture];
     }
     
 }

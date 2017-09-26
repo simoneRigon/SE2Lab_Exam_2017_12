@@ -258,3 +258,11 @@ describe("Test /updateFornitures", function() {
 	});	
 	
 });
+
+
+// Test for /searchForniture -- da finire...
+describe("Test /searchForniture", function() {
+    it("returns status code 200", function(done) {
+        
+    }); 
+});

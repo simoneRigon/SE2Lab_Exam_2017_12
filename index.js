@@ -275,13 +275,8 @@ app.use('/updateFornitures', function(request, response){
                 response.writeHead(200, headers);
                 response.end(JSON.stringify(updateForniture));
             }
-        
         }
-        
-        
     }
-    
-    
 });
 
 app.listen(app.get('port'), function() {
