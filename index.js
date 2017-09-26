@@ -173,7 +173,7 @@ app.post('/sellFornitures', function(request, response)
 });
 
 // Inserisco funzione "insertRawElement"
-app.use('/insertRawElement', function(request, response){
+app.use('/insertRawElements', function(request, response){
     var headers = {};
 	headers["Access-Control-Allow-Origin"] = "*";
 	headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";

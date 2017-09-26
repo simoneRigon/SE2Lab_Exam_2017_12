@@ -234,4 +234,4 @@ exports.searchForniture = searchForniture;
 exports.searchPosForniture = searchPosForniture; 
 exports.searchPosRawElement = searchPosRawElement; 
 exports.sellForniture = sellForniture;
-exports.inserRawElement = inserRawElement;
+exports.inserRawElement = insertRawElement;
